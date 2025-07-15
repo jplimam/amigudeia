@@ -84,8 +84,8 @@ const AmigurumiLanding = () => {
             className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed"
           >
             Desperte sorrisos e crie memórias especiais com nossos amigurumis
-            <br className="hidden md:block" />
-            feitos à mão com amor e dedicação única
+            <br className="hidden md:block" /> feitos à mão com amor e dedicação
+            única
           </motion.p>
 
           <motion.div
@@ -342,7 +342,7 @@ const AmigurumiLanding = () => {
               Pronto para Criar Momentos Especiais?
             </h2>
             <p className="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
-              Garante já o seu amigurumi favorito ou encomende uma peça
+              Garanta já o seu amigurumi favorito ou encomende uma peça
               personalizada única
             </p>
 
