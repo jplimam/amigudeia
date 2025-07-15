@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useState, useEffect, RefAttributes } from "react";
-import { HTMLMotionProps, motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import {
   Heart,
   Star,
   ArrowRight,
   Gift,
-  Sparkles,
   Users,
   Clock,
   CheckCircle,
 } from "lucide-react";
 import CurvedLoop from "@/blocks/TextAnimations/CurvedLoop/CurvedLoop";
 import Link from "next/link";
+import Image from "next/image";
 
 const AmigurumiLanding = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,17 +23,6 @@ const AmigurumiLanding = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const floatingAnimation: any &
-    Omit<HTMLMotionProps<"img">, "ref"> &
-    RefAttributes<HTMLImageElement> = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 overflow-hidden">
@@ -74,7 +63,14 @@ const AmigurumiLanding = () => {
           >
             <motion.div className="inline-block mb-4">
               <motion.img
-                animate={floatingAnimation}
+                animate={{
+                  y: [-10, 10, -10],
+                  transition: {
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  },
+                }}
                 className="w-50 h-50 sm:h-54 sm:w-54 md:h-58 md:w-58 mx-auto"
                 src="/amigudeia-logo.png"
               />
@@ -322,7 +318,7 @@ const AmigurumiLanding = () => {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
                 <p className="font-semibold text-gray-800">
                   {testimonial.name}
@@ -388,10 +384,11 @@ const AmigurumiLanding = () => {
       <footer className="relative z-10 py-12 px-6 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center items-center space-x-2 mb-6">
-            <img
+            <Image
               src="/amigudeia-logo.png"
               alt="Amigudeia Logo"
-              className="w-18 h-18"
+              width={18}
+              height={18}
             />
           </div>
           <p className="text-gray-400 mb-6">Created by João Pedro Lima</p>
