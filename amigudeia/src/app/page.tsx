@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, RefAttributes } from "react";
-import { HTMLMotionProps, motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import {
   Heart,
   Star,
   ArrowRight,
   Gift,
-  Sparkles,
   Users,
   Clock,
   CheckCircle,
@@ -23,17 +22,6 @@ const AmigurumiLanding = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const floatingAnimation: any &
-    Omit<HTMLMotionProps<"img">, "ref"> &
-    RefAttributes<HTMLImageElement> = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-pink-100 overflow-hidden">
@@ -74,7 +62,14 @@ const AmigurumiLanding = () => {
           >
             <motion.div className="inline-block mb-4">
               <motion.img
-                animate={floatingAnimation}
+                animate={{
+                  y: [-10, 10, -10],
+                  transition: {
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  },
+                }}
                 className="w-50 h-50 sm:h-54 sm:w-54 md:h-58 md:w-58 mx-auto"
                 src="/amigudeia-logo.png"
               />
