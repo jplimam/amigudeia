@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import CurvedLoop from "@/blocks/TextAnimations/CurvedLoop/CurvedLoop";
 import Link from "next/link";
+import Image from "next/image";
 
 const AmigurumiLanding = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -317,7 +318,7 @@ const AmigurumiLanding = () => {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4 italic">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
                 <p className="font-semibold text-gray-800">
                   {testimonial.name}
@@ -383,10 +384,11 @@ const AmigurumiLanding = () => {
       <footer className="relative z-10 py-12 px-6 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center items-center space-x-2 mb-6">
-            <img
+            <Image
               src="/amigudeia-logo.png"
               alt="Amigudeia Logo"
-              className="w-18 h-18"
+              width={18}
+              height={18}
             />
           </div>
           <p className="text-gray-400 mb-6">Created by João Pedro Lima</p>
