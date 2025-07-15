@@ -387,8 +387,8 @@ const AmigurumiLanding = () => {
             <Image
               src="/amigudeia-logo.png"
               alt="Amigudeia Logo"
-              width={18}
-              height={18}
+              width={80}
+              height={80}
             />
           </div>
           <p className="text-gray-400 mb-6">Created by João Pedro Lima</p>
